@@ -1,0 +1,128 @@
+body {
+    background: #0F0F0F; 
+    color: white; 
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+
+#headline {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif
+}
+
+h2 {
+    text-decoration: underline
+}
+
+p {
+    border-radius: 30px;
+    background: white;
+    color: black;
+    width: 45%; 
+    border: 2px;
+	border-style:solid;
+    border-collapse:collapse;
+    box-shadow: 5px 5px
+}
+
+#massage_div {
+    color: black;
+    background: #6c7156;
+    box-shadow: 10px 10px 5px black
+}
+
+#title
+{ 
+	font-weight: bold; 
+	font-size: 120%; 
+	clear: both; 
+	margin: 0; 
+}
+
+.button {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 2px solid #0F0F0F;
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    font-size: 30px;
+    margin: 4px 2px;
+  }
+
+  #day_change_btn {
+    width: 600px;
+    height: 60px;
+    padding: 15px 32px;
+  }
+
+  #day_change_btn:hover {
+    background-color: #0F0F0F; 
+    color: white; 
+  }
+
+  #filter_div {
+    align-content: center;
+    width: 600px;
+    height: 60px;
+    border: 2px solid #0F0F0F;
+    color: black;
+    background: white;
+    border-radius: 12px;
+    margin: 10px;
+  }
+
+  .lable {
+    font-size: 30px;
+  }
+
+  #filter_select {
+      font-size: 30px;
+  }
+
+  #filter_input {
+    width: 80px;
+    font-size: 30px;
+  }
+
+  #filter_btn {
+    border-radius: 8px;
+  }
+
+  #filter_btn:hover {
+    background-color: #0F0F0F; 
+    color: white; 
+  }
+
+th { background: black; color: white; }
+
+#table
+{
+    color: black; 
+	width: 100%; 
+	font-size: 100%;
+	border: 1px;
+	border-style:solid;
+	border-collapse:collapse;
+}
+
+.header_row {
+    color: white
+}
+
+th.list,
+td.list,
+tr.list
+{
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin: 0px;
+	border-collapse:collapse;
+	padding: 3px;
+}
+
+tr.odd { background: Navajowhite; }
+tr.even { background: Blanchedalmond; }

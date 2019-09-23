@@ -1,0 +1,51 @@
+{
+  "name": "Vertretungsplan",
+  "short_name": "Plan",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0F0F0F",
+  "theme_color": "#008080",
+  "orientation": "portrait-primary",
+  "icons": [
+        {
+            "src": "/icon/Logo_72x72.png",
+            "type": "image/png",
+            "size": "72x72"
+        },
+        {
+            "src": "/icon/Logo_96x96.png",
+            "type": "image/png",
+            "size": "96x96"
+        },
+        {
+            "src": "/icon/Logo_128x128.png",
+            "type": "image/png",
+            "size": "128x128"
+        },
+        {
+            "src": "/icon/Logo_144x144.png",
+            "type": "image/png",
+            "size": "144x144"
+        },
+        {
+            "src": "/icon/Logo_152x152.png",
+            "type": "image/png",
+            "size": "152x152"
+        },
+        {
+            "src": "/icon/Logo_192x192.png",
+            "type": "image/png",
+            "size": "192x192"
+        },
+        {
+            "src": "/icon/Logo_384x384.png",
+            "type": "image/png",
+            "size": "384x384"
+        },
+        {
+            "src": "/icon/Logo_512x512.png",
+            "type": "image/png",
+            "size": "512x512"
+        }
+ ]
+}
