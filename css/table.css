@@ -1,6 +1,7 @@
 body {
     background: #0F0F0F; 
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    color: #0F0F0F
   }
 
 tbody {
@@ -28,7 +29,6 @@ th { background: black; color: white; }
 
 #table
 {
-  color: black; 
 	font-size: 100%;
 	border: 1px;
 	border-style:solid;
