@@ -2,8 +2,10 @@ const staticCacheName = 'site-static-v31';
 const dynamicCacheName = 'site-dynamic-v31';
 const assets = [
     "/",
+    "/manifest.json",
     "/index.html",
     "/script/app.js",
+    "/script/planleser.js",
     "/css/main.css",
     "/css/table.css",
     "/script/include/tablesaw/dist/tablesaw-init.js",
@@ -49,23 +51,23 @@ self.addEventListener('activate', evt => {
   );
 });
 
-// // fetch events
-// self.addEventListener('fetch', evt => {
-//   // console.log('fetch event', evt);
-//   evt.respondWith(
-//     caches.match(evt.request).then(cacheRes => {
-//       return cacheRes || fetch(evt.request).then(fetchRes => {
-//         return caches.open(dynamicCacheName).then(cache => {
-//           cache.put(evt.request.url, fetchRes.clone());
-//           // check cached items size
-//           limitCacheSize(dynamicCacheName, 15);
-//           return fetchRes;
-//         })
-//       });
-//     }).catch(() => {
-//       if(evt.request.url.indexOf('.html') > -1){
-//         return caches.match('/pages/fallback.html');
-//       } 
-//     })
-//   );
-// });
+// fetch events
+self.addEventListener('fetch', evt => {
+  // console.log('fetch event', evt);
+  evt.respondWith(
+    caches.match(evt.request).then(cacheRes => {
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          // check cached items size
+          limitCacheSize(dynamicCacheName, 15);
+          return fetchRes;
+        })
+      });
+    }).catch(() => {
+      if(evt.request.url.indexOf('.html') > -1){
+        return caches.match('/pages/fallback.html');
+      } 
+    })
+  );
+});
