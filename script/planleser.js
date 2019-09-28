@@ -12,27 +12,40 @@ function loadJSON(callback) {
     xobj.open('GET', '/planstuff/plan.json', true);
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
             callback(xobj.responseText);
           }
     };
-    xobj.send(null);  
+    xobj.send(null);
  }
 
- function init() {
+ function init_plan() {
     loadJSON(function(response) {
      // Parse JSON string into object
      let dict = JSON.parse(response)
-     let day = day_state(dict)
+     let day = reverse_day_state(dict)
      set_plan_data(dict[day]["table"]);
      set_title(dict[day]["title"]);
      set_message(dict[day]["message"]);
     });
    }
 
-init();
+function filter_plan() {
+    console.log("filter");
+    loadJSON(function(response) {
+        // Parse JSON string into object
+        let dict = JSON.parse(response)
+        let day = day_state(dict)
+        let filter_for = document.getElementById("filter_input").innerHTML;
+        let filter_in = null;
+        set_plan_data(dict[day]["table"], filter_for, filter_in);
+        set_title(dict[day]["title"]);
+        set_message(dict[day]["message"]);
+       });
+}
 
-function day_state(dict) {
+init_plan();
+
+function reverse_day_state(dict) {
     for(i = 0; i < sizeObj(dict); i++) {
         if(dict[i]["title"] != document.getElementById("title").innerHTML) {
             return i;
@@ -40,8 +53,12 @@ function day_state(dict) {
     }
 };
 
-function day_change_bt_clicked() {
-    init();
+function day_state(dict) {
+    for(i = 0; i < sizeObj(dict); i++) {
+        if(dict[i]["title"] == document.getElementById("title").innerHTML) {
+            return i;
+        }
+    }
 };
 
 function set_message(message) {
@@ -52,7 +69,7 @@ function set_title(title) {
     document.getElementById("title").innerHTML = title;
 };
 
-function set_plan_data(raw_plan_data) {
+function set_plan_data(raw_plan_data, filter_for=null, filter_in=null) {
     document.getElementById('t-body').innerHTML = `
                 <!-- <tr class="odd">
                     <td class="title">5e</td>
