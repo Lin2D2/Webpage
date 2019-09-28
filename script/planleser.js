@@ -70,38 +70,7 @@ function set_title(title) {
 };
 
 function set_plan_data(raw_plan_data, filter_for=null, filter_in=null) {
-    document.getElementById('t-body').innerHTML = `
-                <!-- <tr class="odd">
-                    <td class="title">5e</td>
-                    <td>1</td>
-                    <td>---</td>
-                    <td>---</td>
-                    <td>---</td>
-                    <td>Of</td>
-                    <td>Ch</td>
-                    <td>204/CH</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>x</td>
-                    <td>&nbsp;</td>
-                </tr>
-        
-                <tr class="even">
-                    <td class="title">7l</td>
-                    <td>3</td>
-                    <td>---</td>
-                    <td>---</td>
-                    <td>---</td>
-                    <td>Pt</td>
-                    <td>Bio</td>
-                    <td>106/CH</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>x</td>
-                    <td>&nbsp;</td>
-                </tr> -->`;
+    document.getElementById('t-body').innerHTML = ``;
     for(i = 0; i < sizeObj(raw_plan_data) - 1; i+= 2) {
         const html_plan_odd = `
             <tr class="odd">
