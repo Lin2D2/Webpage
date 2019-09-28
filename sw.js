@@ -1,5 +1,5 @@
-const staticCacheName = 'site-static-v31';
-const dynamicCacheName = 'site-dynamic-v31';
+const staticCacheName = 'site-static-v40';
+const dynamicCacheName = 'site-dynamic-v40';
 const assets = [
     "/",
     "/manifest.json",
@@ -11,7 +11,8 @@ const assets = [
     "/script/include/tablesaw/dist/tablesaw-init.js",
     "/script/include/tablesaw/dist/tablesaw.css",
     "/icons/192x192.png",
-    "/icons/512x512.png"
+    "/icons/512x512.png",
+    "/planstuff/plan.json"
 ];
 
 

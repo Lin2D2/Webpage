@@ -1,9 +1,4 @@
 
-const url_login = "https://gymherderschule.de/iserv/login_check";
-const url_today = "https://gymherderschule.de/iserv/infodisplay/file/23/infodisplay/0/SchuelerOnline/subst_002.htm";
-
-let day = 0;
-
 function sizeObj(obj) {
     return Object.keys(obj).length;
   }
@@ -28,6 +23,7 @@ function loadJSON(callback) {
     loadJSON(function(response) {
      // Parse JSON string into object
      let dict = JSON.parse(response)
+     let day = day_state(dict)
      set_plan_data(dict[day]["table"]);
      set_title(dict[day]["title"]);
      set_message(dict[day]["message"]);
@@ -35,6 +31,18 @@ function loadJSON(callback) {
    }
 
 init();
+
+function day_state(dict) {
+    for(i = 0; i < sizeObj(dict); i++) {
+        if(dict[i]["title"] != document.getElementById("title").innerHTML) {
+            return i;
+        }
+    }
+};
+
+function day_change_bt_clicked() {
+    init();
+};
 
 function set_message(message) {
     document.getElementById("message").innerHTML = message;
@@ -44,7 +52,39 @@ function set_title(title) {
     document.getElementById("title").innerHTML = title;
 };
 
-function set_plan_data(raw_plan_data) { 
+function set_plan_data(raw_plan_data) {
+    document.getElementById('t-body').innerHTML = `
+                <!-- <tr class="odd">
+                    <td class="title">5e</td>
+                    <td>1</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>Of</td>
+                    <td>Ch</td>
+                    <td>204/CH</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>x</td>
+                    <td>&nbsp;</td>
+                </tr>
+        
+                <tr class="even">
+                    <td class="title">7l</td>
+                    <td>3</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>Pt</td>
+                    <td>Bio</td>
+                    <td>106/CH</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>x</td>
+                    <td>&nbsp;</td>
+                </tr> -->`;
     for(i = 0; i < sizeObj(raw_plan_data) - 1; i+= 2) {
         const html_plan_odd = `
             <tr class="odd">
