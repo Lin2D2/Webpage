@@ -1,0 +1,55 @@
+body {
+    background: #0F0F0F; 
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+  }
+  
+#title {
+  color: #ffff;
+  font-size: 150%;
+}
+
+.tablesaw-advance.minimap {
+  border: 1px solid #0F0F0F;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.tablesaw-advance .tablesaw-btn.btn-micro {
+  border: 1px solid #0F0F0F;
+  border-radius: 2px;
+  background-color: white;
+}
+
+th { background: black; color: white; }
+
+#table
+{
+  color: black; 
+	font-size: 100%;
+	border: 1px;
+	border-style:solid;
+	border-collapse:collapse;
+}
+
+.hidden {
+  visibility: collapse;
+}
+
+.header_row {
+    color: white
+}
+
+th,
+td,
+tr
+{
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin: 0px;
+	border-collapse:collapse;
+	padding: 3px;
+}
+
+tr.odd { background: Navajowhite; }
+tr.even { background: Blanchedalmond; }
