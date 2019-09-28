@@ -35,8 +35,9 @@ function filter_plan() {
         // Parse JSON string into object
         let dict = JSON.parse(response)
         let day = day_state(dict)
-        let filter_for = document.getElementById("filter_input").innerHTML;
-        let filter_in = null;
+        let filter_for = document.getElementById("filter_input").value;
+        if(filter_for == "") {filter_for = null};
+        let filter_in = document.getElementById("filter_select").value;
         set_plan_data(dict[day]["table"], filter_for, filter_in);
         set_title(dict[day]["title"]);
         set_message(dict[day]["message"]);
@@ -105,9 +106,17 @@ function set_plan_data(raw_plan_data, filter_for=null, filter_in=null) {
                 <td class=" tablesaw-priority-1">${raw_plan_data[i + 1]["entfall"]}</td>
                 <td class=" tablesaw-priority-0">${raw_plan_data[i + 1]["n.druck.(n)"]}</td>
             </tr>`;
-
+        if(filter_for == null) {
             document.getElementById('t-body').innerHTML += html_plan_odd;
             document.getElementById('t-body').innerHTML += html_plan_even;
-
+        }
+        else{
+            if(raw_plan_data[i][filter_in] == filter_for){
+                document.getElementById('t-body').innerHTML += html_plan_odd;
+            };
+            if(raw_plan_data[i + 1][filter_in] == filter_for){
+                document.getElementById('t-body').innerHTML += html_plan_even;
+            }
+        };
     };
 };
