@@ -2,6 +2,10 @@ body {
     background: #0F0F0F; 
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
   }
+
+tbody {
+  color: #0F0F0F;
+}
   
 #title {
   color: #ffff;

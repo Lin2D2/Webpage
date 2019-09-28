@@ -9,6 +9,12 @@
         <link rel="manifest" href="/manifest.json">
         <!-- stylesheets -->
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" href="/script/include/tablesaw/dist/tablesaw.css">
+        <link rel="stylesheet" href="/css/table.css">
+        <!-- script imports -->
+        <script src="/script/planleser.js"></script>
+        <script src="/script/include/tablesaw/dist/tablesaw.js"></script>
+        <script src="/script/include/tablesaw/dist/tablesaw-init.js"></script>
         <!-- ios support -->
         <link rel="apple-touch-icon" href="/icon/Logo_96x96.png">
         <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
@@ -24,7 +30,7 @@
         <div id="top_container">
             <div id="top_div">
                 <h2>Nachricht des Tages</h2>
-                <p id="massage">
+                <p id="message">
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
                     erat, sed diam voluptua. At vero eos et accusam et justo duo
@@ -44,10 +50,71 @@
                     <input id="filter_input" type="text" placeholder="8L">
                     <button id="filter_btn" class="button">Filtern</button>
                 </div>
-                <form action="input_button.htm">
-                    <input id="show_plan" type="button" class="button" value="Vertretungsplan anzeigen" onClick="self.location.href='planstuff/plan_page.html'">
-                </form>
             </div>
+        </div>
+        <div class="docs">
+            <h1 id="title">20.9.2019 Freitag, Woche B</h1>       
+        </div>
+        
+        <div class="tablesaw-overflow">
+        
+        <table id="main_table" class="tablesaw tablesaw-columntoggle" data-tablesaw-mode="columntoggle" data-tablesaw-minimap id="plan-235">
+             <thead>
+                    
+                <tr>
+                    <th scope="col" data-tablesaw-priority="persist">Klasse(n)</th>
+                    <th scope="col" data-tablesaw-priority="1">Stunde</th>
+                    <th scope="col" data-tablesaw-priority="5">Vertreter</th>
+                    <th scope="col" data-tablesaw-priority="4">Fach</th>
+                    <th scope="col" data-tablesaw-priority="3">Raum</th>
+                    <th scope="col" data-tablesaw-priority="2">(Lehrer)</th>
+                    <th scope="col" data-tablesaw-priority="1">(Fach)</th>
+                    <th scope="col" data-tablesaw-priority="2">(Raum)</th>
+                    <th scope="col" data-tablesaw-priority="5">Vertretungs-Text</th>
+                    <th scope="col" data-tablesaw-priority="6">statt<br>Vertr. von</th>
+                    <th scope="col" data-tablesaw-priority="5">Mitbetreuung</th>
+                    <th scope="col" data-tablesaw-priority="1">Entfall</th>
+                    <th scope="col" data-tablesaw-priority="0">N.Druck. (N)</th>
+                </tr>
+        
+             </thead>
+             <tbody id="t-body">
+                    
+                <!-- <tr class="odd">
+                    <td class="title">5e</td>
+                    <td>1</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>Of</td>
+                    <td>Ch</td>
+                    <td>204/CH</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>x</td>
+                    <td>&nbsp;</td>
+                </tr>
+        
+                <tr class="even">
+                    <td class="title">7l</td>
+                    <td>3</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>---</td>
+                    <td>Pt</td>
+                    <td>Bio</td>
+                    <td>106/CH</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>x</td>
+                    <td>&nbsp;</td>
+                </tr> -->
+        
+             </tbody>
+        </table>
+        
         </div>
         <script type="text/javascript" src="/script/app.js"></script>
 

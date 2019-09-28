@@ -14,7 +14,7 @@ function loadJSON(callback) {
 
     let xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'plan.json', true);
+    xobj.open('GET', '/planstuff/plan.json', true);
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -30,19 +30,21 @@ function loadJSON(callback) {
      let dict = JSON.parse(response)
      set_plan_data(dict[day]["table"]);
      set_title(dict[day]["title"]);
+     set_message(dict[day]["message"]);
     });
    }
 
 init();
 
-function set_title(title) {
-    console.log(title)
-    document.getElementById("title").innerHTML = title;
-}
+function set_message(message) {
+    document.getElementById("message").innerHTML = message;
+};
 
-function set_plan_data(raw_plan_data) {
-    console.log(raw_plan_data);
-    
+function set_title(title) {
+    document.getElementById("title").innerHTML = title;
+};
+
+function set_plan_data(raw_plan_data) { 
     for(i = 0; i < sizeObj(raw_plan_data) - 1; i+= 2) {
         const html_plan_odd = `
             <tr class="odd">
